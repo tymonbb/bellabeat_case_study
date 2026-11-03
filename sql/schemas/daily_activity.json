@@ -1,0 +1,17 @@
+[
+  {"name": "Id", "type": "INTEGER"},
+  {"name": "ActivityDate", "type": "STRING"},
+  {"name": "TotalSteps", "type": "INTEGER"},
+  {"name": "TotalDistance", "type": "FLOAT"},
+  {"name": "TrackerDistance", "type": "FLOAT"},
+  {"name": "LoggedActivitiesDistance", "type": "FLOAT"},
+  {"name": "VeryActiveDistance", "type": "FLOAT"},
+  {"name": "ModeratelyActiveDistance", "type": "FLOAT"},
+  {"name": "LightActiveDistance", "type": "FLOAT"},
+  {"name": "SedentaryActiveDistance", "type": "FLOAT"},
+  {"name": "VeryActiveMinutes", "type": "INTEGER"},
+  {"name": "FairlyActiveMinutes", "type": "INTEGER"},
+  {"name": "LightlyActiveMinutes", "type": "INTEGER"},
+  {"name": "SedentaryMinutes", "type": "INTEGER"},
+  {"name": "Calories", "type": "INTEGER"}
+]

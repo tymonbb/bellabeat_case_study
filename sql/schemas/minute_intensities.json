@@ -1,0 +1,5 @@
+[
+  {"name": "Id", "type": "INTEGER"},
+  {"name": "ActivityMinute", "type": "STRING"},
+  {"name": "Intensity", "type": "INTEGER"}
+]

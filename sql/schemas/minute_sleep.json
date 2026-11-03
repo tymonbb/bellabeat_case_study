@@ -1,0 +1,6 @@
+[
+  {"name": "Id", "type": "INTEGER"},
+  {"name": "date", "type": "STRING"},
+  {"name": "value", "type": "INTEGER"},
+  {"name": "logId", "type": "INTEGER"}
+]

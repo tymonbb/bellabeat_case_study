@@ -1,0 +1,5 @@
+[
+  {"name": "Id", "type": "INTEGER"},
+  {"name": "Time", "type": "STRING"},
+  {"name": "Value", "type": "INTEGER"}
+]

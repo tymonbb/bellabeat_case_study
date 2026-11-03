@@ -1,0 +1,7 @@
+[
+  {"name": "Id", "type": "INTEGER"},
+  {"name": "SleepDay", "type": "STRING"},
+  {"name": "TotalSleepRecords", "type": "INTEGER"},
+  {"name": "TotalMinutesAsleep", "type": "INTEGER"},
+  {"name": "TotalTimeInBed", "type": "INTEGER"}
+]

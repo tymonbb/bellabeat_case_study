@@ -1,0 +1,10 @@
+[
+  {"name": "Id", "type": "INTEGER"},
+  {"name": "Date", "type": "STRING"},
+  {"name": "WeightKg", "type": "FLOAT"},
+  {"name": "WeightPounds", "type": "FLOAT"},
+  {"name": "Fat", "type": "FLOAT"},
+  {"name": "BMI", "type": "FLOAT"},
+  {"name": "IsManualReport", "type": "BOOLEAN"},
+  {"name": "LogId", "type": "INTEGER"}
+]
