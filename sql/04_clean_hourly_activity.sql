@@ -1,5 +1,5 @@
 -- =====================================================================
--- 2.6 Hourly activity table (both periods)
+-- 04.1 Hourly activity table (both periods)
 -- Period 1 rows for 2016-04-12 excluded (truncated, see log row 3).
 -- =====================================================================
 CREATE OR REPLACE TABLE fitbit_clean.hourly_activity AS
@@ -66,7 +66,7 @@ LEFT JOIN fitbit_clean.daily_activity AS d
  AND DATE(h.hour_start) = d.activity_date
 WHERE NOT (h.period = 1 AND DATE(h.hour_start) = DATE '2016-04-12');
 
--- 2.7 Hourly table checks
+-- 04.2 Hourly table checks
 -- Expected: period 1: 23,909 rows, 34 users; period 2: 22,099 rows, 33 users;
 -- 6 rows without a full hour of minute data
 SELECT
@@ -81,7 +81,7 @@ FROM fitbit_clean.hourly_activity
 GROUP BY period
 ORDER BY period;
 
--- 2.8 One row per user and hour?
+-- 04.3 One row per user and hour?
 -- Expected: 46,008 rows, 46,008 unique user-hours, 35 users
 SELECT
   COUNT(*) AS total_rows,

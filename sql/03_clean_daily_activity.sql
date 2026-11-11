@@ -1,5 +1,5 @@
 -- =====================================================================
--- 2.3 Final daily activity table
+-- 03.1 Final daily activity table
 -- Original daily files take priority; rebuilt data fills period-1 gaps.
 -- Decisions: docs/data_quality_log.md, rows 2, 3, 5, 8 and 11.
 -- =====================================================================
@@ -67,7 +67,7 @@ LEFT JOIN fitbit_clean.daily_rebuilt AS r
  AND c.user_id = r.user_id
  AND c.activity_date = r.activity_date;
 
--- 2.4 Checks on the final daily table
+-- 03.2 Checks on the final daily table
 SELECT
   data_source,
   period,
@@ -80,7 +80,7 @@ FROM fitbit_clean.daily_activity
 GROUP BY data_source, period
 ORDER BY period, data_source;
 
--- 2.5 One row per user and day?
+-- 03.3 One row per user and day?
 SELECT
   COUNT(*) AS total_rows,
   COUNT(DISTINCT FORMAT('%d|%t', user_id, activity_date)) AS unique_user_days,

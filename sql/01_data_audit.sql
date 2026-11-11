@@ -1,5 +1,5 @@
 -- =====================================================================
--- 1. Date parsing check
+-- 01.1 Date parsing check
 -- Every text date/time must convert to a real DATE or DATETIME.
 -- =====================================================================
 SELECT 'p1_daily_activity' AS table_name,
@@ -56,7 +56,7 @@ SELECT 'p2_heartrate_seconds', COUNT(*),
 FROM fitbit_raw.p2_heartrate_seconds;
 
 -- =====================================================================
--- 2. Coverage by source and period
+-- 01.2 Coverage by source and period
 -- Users, user-days and date range for each data source.
 -- =====================================================================
 WITH observations AS (
@@ -115,7 +115,7 @@ GROUP BY source, period
 ORDER BY source, period;
 
 -- =====================================================================
--- 3. Period 1: users per date, daily file vs hourly file
+-- 01.3 Period 1: users per date, daily file vs hourly file
 -- Shows that the daily file is incomplete before 2016-04-01.
 -- =====================================================================
 WITH daily AS (
@@ -139,7 +139,7 @@ LEFT JOIN daily AS d USING (activity_date)
 ORDER BY activity_date;
 
 -- =====================================================================
--- 4. Overlapping date 2016-04-12 in both periods
+-- 01.4 Overlapping date 2016-04-12 in both periods
 -- Period 1 export appears to cut this day off mid-day.
 -- =====================================================================
 SELECT
@@ -156,7 +156,7 @@ WHERE p1.ActivityDate = '4/12/2016'
 ORDER BY p1.Id;
 
 -- =====================================================================
--- 5. Duplicates
+-- 01.5 Duplicates
 -- duplicate_keys: repeated (Id, timestamp) pairs
 -- full_duplicates: rows identical in every column
 -- =====================================================================
@@ -196,8 +196,8 @@ SELECT 'p2_hourly_steps',
 FROM fitbit_raw.p2_hourly_steps AS t;
 
 -- =====================================================================
--- 6. Likely non-wear days in daily activity (both periods)
--- Period 1 row for 2016-04-12 excluded (incomplete, see query 4).
+-- 01.6 Likely non-wear days in daily activity (both periods)
+-- Period 1 row for 2016-04-12 excluded (incomplete, see query 01.4).
 -- =====================================================================
 WITH daily AS (
   SELECT Id, TotalSteps, SedentaryMinutes,
@@ -220,7 +220,7 @@ SELECT
 FROM daily;
 
 -- =====================================================================
--- 7. Feature adoption: how many users have any data for each feature
+-- 01.7 Feature adoption: how many users have any data for each feature
 -- =====================================================================
 WITH users_by_feature AS (
   SELECT 'activity' AS feature, Id FROM fitbit_raw.p1_daily_activity

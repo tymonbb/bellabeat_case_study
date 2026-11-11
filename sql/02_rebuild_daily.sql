@@ -1,8 +1,8 @@
 -- =====================================================================
--- 2.1 Rebuild daily activity from minute and hourly data (both periods)
+-- 02.1 Rebuild daily activity from minute and hourly data (both periods)
 -- Needed because the period 1 daily file is incomplete
 -- (see docs/data_quality_log.md, row 2). Period 2 is rebuilt as well,
--- to validate the method against the original daily file (query 2.2).
+-- to validate the method against the original daily file (query 02.2).
 -- =====================================================================
 CREATE OR REPLACE TABLE fitbit_clean.daily_rebuilt AS
 
@@ -92,7 +92,7 @@ LEFT JOIN sleep_daily AS s
   ON i.period = s.period AND i.Id = s.Id AND i.activity_date = s.activity_date;
 
 -- =====================================================================
--- 2.2 Validate the rebuild against the original period 2 daily file
+-- 02.2 Validate the rebuild against the original period 2 daily file
 -- =====================================================================
 WITH official AS (
   SELECT
