@@ -5,9 +5,8 @@ March–May 2016). The goal is to identify usage and engagement patterns
 that can inform marketing strategy for Bellabeat, a maker of wellness
 devices for women.
 
-> **Status:** in progress. Data audit complete; data cleaning in BigQuery
-> under way. Executive summary and findings will be added when the analysis
-> is complete.
+> **Status:** in progress. Data audit, cleaning and star-schema data model
+> in BigQuery complete; analysis in Python under way.
 
 ## Approach
 
